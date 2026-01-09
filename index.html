@@ -2,21 +2,21 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" /> <!-- 画面の表示の仕方 ページの表示幅を端末の画面幅に合わせる, ズーム倍率を1倍にする -->
   <title>HTML Relearn | Agohige</title>
   <meta name="description" content="HTML/CSS/JS学び直し用のサンプルページ" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
-  <a class="skip-link" href="#main">本文へスキップ</a>
+  <a class="skip-link" href="#main">本文へスキップ</a> <!-- これがうまく表示できていない、要修正 -->
 
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="/">Agohige</a>
 
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span class="menu-btn__bar" aria-hidden="true"></span>
+        <span class="menu-btn__bar" aria-hidden="true"></span> <!-- ハンバーガーアイコンの線（装飾用）。見た目はCSSで作る。このspanは読み上げ対象外 -->
         <span class="menu-btn__bar" aria-hidden="true"></span>
         <span class="menu-btn__bar" aria-hidden="true"></span>
         <span class="visually-hidden">メニューを開閉</span>
@@ -33,15 +33,15 @@
   </header>
 
   <main id="main">
-    <section class="section">
+    <section class="section"> <!-- sectionは節 -->
       <div class="container stack">
-        <h1>HTML 学び直しページ</h1>
+        <h1>HTML 学び直しページ</h1> <!-- h1は基本ページに1つ、その後の見出しはh2以降を使用する（SEO/運用の観点） -->
         <p class="lead">
           まずはHTMLの骨組みを丁寧に作って、次にCSSで整えます。最初は見た目より構造優先。
         </p>
 
         <div class="grid cards">
-          <article class="card">
+          <article class="card"> <!-- articleは独立コンテンツ -->
             <h2 class="card__title">目標</h2>
             <p>セマンティックなHTML → レスポンシブCSS → ちょいJS → 公開、の流れを定着。</p>
           </article>
@@ -75,14 +75,17 @@
           「何ができるか」を短く書くと案件で刺さる。
         </p>
 
-        <dl class="meta">
+        <dl class="meta"> <!-- リスト全体 -->
           <div class="meta__row">
-            <dt>できること</dt>
-            <dd>HTML / CSS（レスポンシブ） / JavaScript（開閉・フォーム）/GitHub Vercel連携</dd>
+            <dt>できること</dt>  <!-- 用語 -->
+            <dd>HTML / CSS（レスポンシブ） / JavaScript（開閉・フォーム）/GitHub Vercel連携</dd> <!-- 説明 -->
           </div>
           <div class="meta__row">
             <dt>公開</dt>
-            <dd><a href="https://html-relearn.vercel.app/" target="_blank">Vercel</a></dd>
+            <dd><a href="https://html-relearn.vercel.app/" target="_blank" rel="noopener noreferrer">Vercel</a></dd>
+            <!-- noopener : リンク先のページがopenerを参照できなくなる（リンク先からリンク元を操作されるリスクを防ぐ） -->
+            <!-- noreferrer : リンク先のページがreferrerを参照できなくなる（ユーザーのプライバシーを守る） -->
+            <!-- 特に外部リンクを設置する際に利用すべき -->
           </div>
         </dl>
       </div>
@@ -91,7 +94,7 @@
     <section id="article" class="section">
       <div class="container">
         <article class="post stack">
-          <header class="post__header stack">
+          <header class="post__header stack"> <!-- headerはsectionやarticleの中でも使える -->
             <h2>記事サンプル：セマンティックHTMLの練習</h2>
             <p class="post__meta">
               <time datetime="2026-01-09">2026-01-09</time> · カテゴリ：学習ログ
@@ -110,7 +113,7 @@
             <li><a href="#contact">リンク</a>：導線を作る</li>
           </ul>
 
-          <figure class="post__figure">
+          <figure class="post__figure"> <!-- 画像＋説明を独立したまとまりにできる（画面読み上げ/検索エンジン/保守の観点） -->
             <img src="https://picsum.photos/1200/700" alt="サンプル画像" loading="lazy" />
             <figcaption>figure / figcaption の練習</figcaption>
           </figure>
@@ -137,13 +140,13 @@
         <form class="form stack" novalidate>
           <div class="field stack-sm">
             <label for="name">お名前 <span aria-hidden="true">*</span></label>
-            <input id="name" name="name" type="text" autocomplete="name" required />
-            <p class="field__error" aria-live="polite"></p>
+            <input id="name" name="name" type="text" autocomplete="name" required /><!-- autocomplete="name"でブラウザに対して名前の自動入力を促す -->
+            <p class="field__error" aria-live="polite"></p> <!-- 画面読み上げに対してユーザ操作を邪魔しない（読み上げ中の場合は、終了後に控えめに読む） -->
           </div>
 
           <div class="field stack-sm">
             <label for="email">メール <span aria-hidden="true">*</span></label>
-            <input id="email" name="email" type="email" autocomplete="email" required />
+            <input id="email" name="email" type="email" autocomplete="email" required /><!-- autocomplete="email"でブラウザに対してメールアドレスの自動入力を促す -->
             <p class="field__error" aria-live="polite"></p>
           </div>
 
