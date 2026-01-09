@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HTML Relearn | ゆうき</title>
+  <meta name="description" content="HTML/CSS/JS学び直し用のサンプルページ" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">本文へスキップ</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">YUUKI</a>
+
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-btn__bar" aria-hidden="true"></span>
+        <span class="menu-btn__bar" aria-hidden="true"></span>
+        <span class="menu-btn__bar" aria-hidden="true"></span>
+        <span class="visually-hidden">メニューを開閉</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="主要ナビゲーション">
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#article">Article</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container stack">
+        <h1>HTML 学び直しページ</h1>
+        <p class="lead">
+          まずはHTMLの骨組みを丁寧に作って、次にCSSで整えます。最初は見た目より構造優先。
+        </p>
+
+        <div class="grid cards">
+          <article class="card">
+            <h2 class="card__title">目標</h2>
+            <p>セマンティックなHTML → レスポンシブCSS → ちょいJS → 公開、の流れを定着。</p>
+          </article>
+
+          <article class="card">
+            <h2 class="card__title">今日のタスク</h2>
+            <ol>
+              <li>この記事ページをHTMLだけで完成</li>
+              <li>Vercelで公開URL作成</li>
+              <li>CSSで余白とレイアウトを整える</li>
+            </ol>
+          </article>
+
+          <article class="card">
+            <h2 class="card__title">作法</h2>
+            <ul>
+              <li>余白は8px刻み</li>
+              <li>レイアウトはFlex/Grid優先</li>
+              <li>positionは最後</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section section--alt">
+      <div class="container stack">
+        <h2>About</h2>
+        <p>
+          プロフィール欄。ここは後でポートフォリオにしていく想定。
+          「何ができるか」を短く書くと案件で刺さる。
+        </p>
+
+        <dl class="meta">
+          <div class="meta__row">
+            <dt>できること</dt>
+            <dd>HTML / CSS（レスポンシブ） / JavaScript（開閉・フォーム）</dd>
+          </div>
+          <div class="meta__row">
+            <dt>公開</dt>
+            <dd>Vercel（Preview URLで確認しながら進められます）</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="article" class="section">
+      <div class="container">
+        <article class="post stack">
+          <header class="post__header stack">
+            <h2>記事サンプル：セマンティックHTMLの練習</h2>
+            <p class="post__meta">
+              <time datetime="2026-01-09">2026-01-09</time> · カテゴリ：学習ログ
+            </p>
+          </header>
+
+          <p>
+            ここに本文。まずは段落、リンク、強調、リスト、画像、引用など、
+            よく使う要素を一通り入れていく。
+          </p>
+
+          <h3>よく使う要素</h3>
+          <ul>
+            <li><strong>strong</strong>：重要な強調</li>
+            <li><em>em</em>：文脈上の強調</li>
+            <li><a href="#contact">リンク</a>：導線を作る</li>
+          </ul>
+
+          <figure class="post__figure">
+            <img src="https://picsum.photos/1200/700" alt="サンプル画像" loading="lazy" />
+            <figcaption>figure / figcaption の練習</figcaption>
+          </figure>
+
+          <blockquote class="quote">
+            <p>HTMLは骨格。骨格が良いとCSSがラク。</p>
+          </blockquote>
+
+          <h3>チェックリスト</h3>
+          <ol>
+            <li>見出し階層が正しい</li>
+            <li>navにaria-labelがある</li>
+            <li>スキップリンクがある</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section section--alt">
+      <div class="container stack">
+        <h2>Contact（フォーム練習）</h2>
+        <p>送信はダミー。まずはラベルと必須、エラー表示の土台だけ作る。</p>
+
+        <form class="form stack" novalidate>
+          <div class="field stack-sm">
+            <label for="name">お名前 <span aria-hidden="true">*</span></label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+            <p class="field__error" aria-live="polite"></p>
+          </div>
+
+          <div class="field stack-sm">
+            <label for="email">メール <span aria-hidden="true">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+            <p class="field__error" aria-live="polite"></p>
+          </div>
+
+          <div class="field stack-sm">
+            <label for="message">内容</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+          </div>
+
+          <button class="btn" type="submit">送信（ダミー）</button>
+          <p class="form__status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© <span id="year"></span> Yuuki</small>
+      <a href="#main">上に戻る</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
