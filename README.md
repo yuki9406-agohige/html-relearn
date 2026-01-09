@@ -14,8 +14,8 @@ HTML/CSS/JavaScript を一から学び直しながら、静的サイト制作の
 - 余白スケール（CSS変数で 8px 刻み）
 - レイアウトは Flex / Grid を優先して組む
 - `container / section / stack / grid` の型で、CSSがぐだらないように整理
-- まだコピペしただけで内容理解は追いついてない
 
 ## 開発メモ
 - 更新フロー：ローカル修正 → GitHubへpush → Vercelで自動デプロイ
 - ブランチ運用：`fix/*` ブランチで修正 →（PRでPreview確認）→ merge
+- まだコピペしただけで内容理解は追いついてない
