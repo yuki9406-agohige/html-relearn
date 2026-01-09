@@ -139,15 +139,15 @@
 
         <form class="form stack" novalidate>
           <div class="field stack-sm">
-            <label for="name">お名前 <span aria-hidden="true">*</span></label>
-            <input id="name" name="name" type="text" autocomplete="name" required /><!-- autocomplete="name"でブラウザに対して名前の自動入力を促す -->
-            <p class="field__error" aria-live="polite"></p> <!-- 画面読み上げに対してユーザ操作を邪魔しない（読み上げ中の場合は、終了後に控えめに読む） -->
+            <label for="name">お名前 <span class="visually-hidden">（必須）</span><span aria-hidden="true">*</span></label><!-- aria-hidden="true"は画面読み上げで無視される -->
+            <input id="name" name="name" type="text" autocomplete="name" required aria-invalid="false" aria-describedby="name-error" /><!-- autocomplete="name"でブラウザに対して名前の自動入力を促す -->
+            <p id="name-error" class="field__error" aria-live="polite"></p> <!-- 画面読み上げに対してユーザ操作を邪魔しない（読み上げ中の場合は、終了後に控えめに読む） -->
           </div>
 
           <div class="field stack-sm">
-            <label for="email">メール <span aria-hidden="true">*</span></label>
-            <input id="email" name="email" type="email" autocomplete="email" required /><!-- autocomplete="email"でブラウザに対してメールアドレスの自動入力を促す -->
-            <p class="field__error" aria-live="polite"></p>
+            <label for="email">メール <span class="visually-hidden">（必須）</span><span aria-hidden="true">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required aria-invalid="false" aria-describedby="email-error" /><!-- autocomplete="email"でブラウザに対してメールアドレスの自動入力を促す -->
+            <p id="email-error" class="field__error" aria-live="polite"></p>
           </div>
 
           <div class="field stack-sm">

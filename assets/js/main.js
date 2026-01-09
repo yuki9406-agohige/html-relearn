@@ -21,9 +21,11 @@
   const status = form.querySelector(".form__status");
 
   const setError = (input, message) => {
-    const field = input.closest(".field");
-    const err = field ? field.querySelector(".field__error") : null;
+    const errId = input.getAttribute("aria-describedby");
+    const err = errId ? document.getElementById(errId) : null;
     if (err) err.textContent = message || "";
+    const hasError = Boolean(message);
+    input.setAttribute("aria-invalid", String(hasError));
   };
 
   form.addEventListener("submit", (e) => {
@@ -44,12 +46,17 @@
 
     if (email) {
       const v = email.value.trim();
-      const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-      if (!valid) {
-        setError(email, "メールアドレスを正しく入力してください");
+      if (v.length === 0) {
+        setError(email, "メールアドレスを入力してください");
         ok = false;
       } else {
-        setError(email, "");
+        const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+        if (!valid) {
+          setError(email, "メールアドレスを正しく入力してください");
+          ok = false;
+        } else {
+          setError(email, "");
+        }
       }
     }
 
