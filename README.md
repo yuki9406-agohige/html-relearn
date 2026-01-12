@@ -18,4 +18,6 @@ HTML/CSS/JavaScript を一から学び直しながら、静的サイト制作の
 ## 開発メモ
 - 更新フロー：ローカル修正 → GitHubへpush → Vercelで自動デプロイ
 - ブランチ運用：`fix/*` ブランチで修正 →（PRでPreview確認）→ merge
-- まだコピペしただけで内容理解は追いついてない
+
+## 各週まとめ
+- Week1: HTML（見出し/リスト/figure/blockquote/code/form）を追加して用途を整理
