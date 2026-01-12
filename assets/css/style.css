@@ -214,6 +214,20 @@ img{ max-width: 100%; height: auto; display:block; }
   border:0;
 }
 
+pre{
+  margin: 0;
+  padding: var(--s2);
+  border: var(--border);
+  border-radius: var(--r2);
+  overflow: auto;
+  background: rgba(0,0,0,.03);
+}
+
+code{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: .95em;
+}
+
 /* responsive */
 @media (max-width: 900px){
   .cards{ grid-template-columns: 1fr; }
