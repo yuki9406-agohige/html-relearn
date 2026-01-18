@@ -104,7 +104,7 @@ img{ max-width: 100%; height: auto; display:block; }
 .card{
   border: var(--border);
   border-radius: var(--r2);
-  padding: var(--s3);
+  padding: var(--s3); /* padding = 内側の余白（中の文字と枠の距離） */
   background: #fff;
 }
 
