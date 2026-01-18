@@ -1,4 +1,5 @@
 :root{
+  /* container = コンテンツ幅を制限して中央寄せする枠 */
   --container: 1100px;
 
   /* spacing scale (8px step) */
