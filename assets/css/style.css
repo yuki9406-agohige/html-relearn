@@ -268,5 +268,9 @@ code{
     text-align: right;
   }
   .cards{ grid-template-columns: 1fr; }
+  /** 
+    情報量が多い／スクロールが長い → --s3
+    ゆったり見せたい／読みやすさ重視 → --s4
+  **/
   .section{ padding-block: var(--s3); }
 }
