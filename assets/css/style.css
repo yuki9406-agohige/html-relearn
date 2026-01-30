@@ -268,4 +268,5 @@ code{
     text-align: right;
   }
   .cards{ grid-template-columns: 1fr; }
+  .section{ padding-block: var(--s3); }
 }
