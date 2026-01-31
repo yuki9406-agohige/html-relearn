@@ -9,7 +9,7 @@
 
   if (btn && nav) {
     btn.addEventListener("click", () => {
-      const isOpen = nav.classList.toggle("is-open");
+      const isOpen = nav.classList.toggle("is-open"); // navにis-openクラスが存在すれば削除、なければ追加
       btn.setAttribute("aria-expanded", String(isOpen));
     });
   }
@@ -23,13 +23,13 @@
   const setError = (input, message) => {
     const errId = input.getAttribute("aria-describedby");
     const err = errId ? document.getElementById(errId) : null;
-    if (err) err.textContent = message || "";
+    if (err) err.textContent = message || ""; // エラーが存在すればメッセージをセット、なければ空文字に
     const hasError = Boolean(message);
     input.setAttribute("aria-invalid", String(hasError));
   };
 
   form.addEventListener("submit", (e) => {
-    e.preventDefault();
+    e.preventDefault(); // フォームのデフォルトの動作をキャンセル(ページリロード防止)
     if (status) status.textContent = "";
 
     const name = form.querySelector("#name");
